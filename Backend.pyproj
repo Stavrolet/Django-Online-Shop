@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>Backend</Name>
+    <RootNamespace>Backend</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
+    <InterpreterId>MSBuild|venv|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserPort>8000</WebBrowserPort>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>4f68a36e-9a48-4f1b-af5a-59c6205d3c1d</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>Backend.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="carts\admin.py" />
+    <Compile Include="carts\apps.py" />
+    <Compile Include="carts\migrations\__init__.py" />
+    <Compile Include="carts\models.py" />
+    <Compile Include="carts\serializers.py" />
+    <Compile Include="carts\tests.py" />
+    <Compile Include="carts\urls.py" />
+    <Compile Include="carts\views.py" />
+    <Compile Include="carts\__init__.py" />
+    <Compile Include="orders\admin.py" />
+    <Compile Include="orders\apps.py" />
+    <Compile Include="orders\migrations\__init__.py" />
+    <Compile Include="orders\models.py" />
+    <Compile Include="orders\tests.py" />
+    <Compile Include="orders\urls.py" />
+    <Compile Include="orders\views.py" />
+    <Compile Include="orders\__init__.py" />
+    <Compile Include="products\admin.py" />
+    <Compile Include="products\models.py" />
+    <Compile Include="products\serializers.py" />
+    <Compile Include="products\tests.py" />
+    <Compile Include="products\urls.py" />
+    <Compile Include="products\utils.py" />
+    <Compile Include="products\views.py" />
+    <Compile Include="products\__init__.py" />
+    <Compile Include="products\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="Backend\__init__.py" />
+    <Compile Include="Backend\settings.py" />
+    <Compile Include="Backend\urls.py" />
+    <Compile Include="Backend\wsgi.py" />
+    <Compile Include="users\admin.py" />
+    <Compile Include="users\apps.py" />
+    <Compile Include="users\migrations\__init__.py" />
+    <Compile Include="users\models.py" />
+    <Compile Include="users\serializers.py" />
+    <Compile Include="users\tests.py" />
+    <Compile Include="users\urls.py" />
+    <Compile Include="users\views.py" />
+    <Compile Include="users\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="carts\" />
+    <Folder Include="carts\migrations\" />
+    <Folder Include="fixtures\" />
+    <Folder Include="fixtures\products\" />
+    <Folder Include="orders\" />
+    <Folder Include="orders\migrations\" />
+    <Folder Include="products\" />
+    <Folder Include="products\migrations\" />
+    <Folder Include="Backend\" />
+    <Folder Include="users\" />
+    <Folder Include="users\migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="venv\">
+      <Id>venv</Id>
+      <Version>3.11</Version>
+      <Description>venv (Python 3.11)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
