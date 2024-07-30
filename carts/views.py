@@ -22,7 +22,7 @@ class CartAddAPI(APIView):
                     cart.save()
                     cart_for_response = cart
             else:
-                Cart.objects.create(user=request.user, product=product, quantity=1)
+                cart_for_response = Cart.objects.create(user=request.user, product=product, quantity=1)
         else:
             if not request.session.session_key:
                 request.session.create()
