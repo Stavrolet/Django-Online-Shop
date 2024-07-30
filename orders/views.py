@@ -10,7 +10,6 @@ from orders.models import Order, OrderItem
 
 class CreateOrderAPI(APIView):
     def post(self, request):
-        # try:
         with transaction.atomic():
             user = request.user
             carts = Cart.objects.filter(user=user)
@@ -31,9 +30,7 @@ class CreateOrderAPI(APIView):
                     quantity = cart.quantity
 
                     if product.quantity < quantity:
-                        raise Exception(
-                            f"Insufficient quantity of {name} in stock/In stock - {quantity}"
-                        )
+                        return Response({"message": f"Insufficient quantity of {name} in stock/In stock - {quantity}"}, status=status.HTTP_409_CONFLICT)
 
                     OrderItem.objects.create(
                         order=order,

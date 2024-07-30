@@ -40,5 +40,7 @@ class LoginAPI(TokenObtainPairView):
     def post(self, request: Request, *args, **kwards):
         if request.session.session_key:
             user = User.objects.get(username=request.data["username"])
-            Cart.objects.filter(session_key=request.session.session_key).update(user=user, session_key=None)
+            carts = Cart.objects.filter(session_key=request.session.session_key)
+            if carts:
+                carts.update(user=user, session_key=None)
         return super().post(request, *args, **kwards)
